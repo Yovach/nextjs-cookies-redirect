@@ -6,6 +6,6 @@ export async function login(data: FormData) {
   const username = data.get("username");
   if (!username) throw new Error("Missing username");
 
-  cookies().set("auth", username.toString());
+  cookies().set("username", username.toString());
   redirect("/profile", RedirectType.push);
 }
